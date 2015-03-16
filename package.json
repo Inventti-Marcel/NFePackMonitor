@@ -1,0 +1,17 @@
+{
+  "name": "NFePackMonitor",
+  "version": "0.0.1",
+  "description": "Repaginando o projeto!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JS",
+    "ReactJS",
+    "e",
+    "mais"
+  ],
+  "author": "Marcel Zanluca <marcel@inventti.com.br>",
+  "license": "ISC"
+}

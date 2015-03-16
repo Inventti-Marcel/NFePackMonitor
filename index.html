@@ -1,0 +1,273 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>NFePackMonitor</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="public/bower_components/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding-top: 70px;;
+        }
+    </style>
+
+    <script src="public/bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">
+            Você está usando um browser <strong>antigo</strong>.
+            Por favor <a href="http://browsehappy.com/">atualize seu navegador</a> para ter uma experiência melhor.
+        </p>
+    <![endif]-->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href>
+                    <img src="public/img/inventti-32.png" style="width: 20px;" alt="Inventti Soluções"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Início">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Recebidos">
+                            <i class="fa fa-upload"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Emitidos">
+                            <i class="fa fa-download"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Destinados">
+                            <i class="fa fa-hand-o-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Configurações">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Usuário">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Grupos">
+                            <i class="fa fa-group"></i>
+                        </a>
+                    </li>
+                    <!--<li class="active">-->
+                        <!--<a href="#" id="pendencias"-->
+                           <!--data-container="body"-->
+                           <!--data-toggle="popover"-->
+                           <!--data-placement="bottom"-->
+                           <!--data-content="Existem pendências do NFePack para serem verificadas">-->
+                            <!--<i class="fa fa-envelope"></i>-->
+                            <!--<span class="text-danger" style="position: absolute; top: 8px; left: 24px;">-->
+                                <!--<i class="fa fa-exclamation-circle"></i>-->
+                            <!--</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                </ul>
+
+                <form class="navbar-form navbar-left form-inline" role="search">
+                    <div class="form-group">
+                        <label for="selectFiliais">Filial:</label>
+                        <select class="form-control" name="filiais" id="selectFiliais" style="width: 200px;">
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Sair">
+                            Sair
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="background-color: #9AC0CD; color: #FFF" data-toggle="tooltip" data-placement="bottom" title="Usuário autenticado">
+                            Marcel Zanluca
+                            <i class="fa fa-male"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">Notas fiscais</a></li>
+                    <li role="presentation"><a href="#">Notas fiscais inutilizadas</a></li>
+                    <li role="presentation"><a href="#">Notas fiscais canceladas</a></li>
+                    <li role="presentation"><a href="#">Críticas de integração</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br/>
+                <table class="table table-hover table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Indicadores</th>
+                            <th>Status NF</th>
+                            <th>Emissor</th>
+                            <th>Destinatário</th>
+                            <th>Num. NF</th>
+                            <th>Série</th>
+                            <th>Emissão</th>
+                            <th>Tipo Emissão</th>
+                            <th>Total</th>
+                            <!--<th>Transportador</th>-->
+                            <!--<th>CNPJ Emissor</th>-->
+                            <!--<th>UF Emissão</th>-->
+                            <!--<th>CNPJ/CPF Destinatário</th>-->
+                            <!--<th>UF Destinatário</th>-->
+                            <!--<th>Data ent/sai</th>-->
+                            <!--<th>CFOP</th>-->
+                            <!--<th>Tipo NF</th>-->
+                            <!--<th>Nat. Op.</th>-->
+                            <!--<th>CNPJ/CPF Transportador</th>-->
+                            <!--<th>Placa</th>-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                        </tr>
+                        <tr>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                        </tr>
+                        <tr>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                        </tr>
+                        <tr>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                            <!--<td>aa</td>-->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="public/bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+
+    <script src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.navbar a').tooltip();
+            $('#pendencias').popover()
+        });
+    </script>
+
+</body>
+</html>
